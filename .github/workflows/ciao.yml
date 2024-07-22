@@ -15,7 +15,7 @@ jobs:
       - run: mvn -v
       - uses: actions/checkout@v4
       - run: ls -la
-      - run: 
+      - run: |
           cd javademo/my-app
           mvn install 
       - run: java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
