@@ -20,7 +20,7 @@ jobs:
           mvn install
       - run: java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
         working-directory: javademo/my-app
-      ciao:
+  ciao:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Pippo"
