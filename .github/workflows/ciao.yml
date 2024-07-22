@@ -29,6 +29,11 @@ jobs:
           # A file, directory or wildcard pattern that describes what to upload
           # Required.
           path: javademo/my-app/target/my-app-1.0-SNAPSHOT.jar
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=camma_restobooking
   ciao:
     runs-on: ubuntu-latest
     steps:
